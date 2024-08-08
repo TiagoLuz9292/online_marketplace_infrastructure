@@ -1,5 +1,5 @@
 module "alb" {
-  source = "github.com/TiagoLuz9292/terraform_modules//alb?ref=main"
+  source = "git::https://github.com/TiagoLuz9292/terraform_modules.git//alb?ref=main"
 
   providers = {
     aws = aws.subaccount
