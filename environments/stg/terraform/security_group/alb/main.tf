@@ -2,7 +2,7 @@ resource "aws_security_group" "alb_sg" {
 
   provider = aws.subaccount
 
-  vpc_id = "vpc-0050f67f234fa063a"
+  vpc_id = "vpc-07eaa184116b5821a"
 
   ingress {
     from_port   = 80

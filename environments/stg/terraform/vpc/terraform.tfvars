@@ -1,0 +1,15 @@
+vpc_cidr            = "10.3.0.0/16"
+subnet_cidr1        = "10.3.1.0/24"
+subnet_cidr2        = "10.3.2.0/24"
+availability_zone1  = "eu-north-1a"
+availability_zone2  = "eu-north-1b"
+vpc_name            = "stg-vpc"
+subnet_name1        = "stg-public-subnet-1"
+subnet_name2        = "stg-public-subnet-2"
+igw_name            = "stg-igw"
+route_table_name    = "stg-route-table"
+environment_tags = {
+  Environment = "stg"
+}
+aws_region         = "eu-north-1"
+sub_account_id     = "024848457167"

@@ -1,0 +1,17 @@
+neet to add vpc peering connection manually;
+
+On instance security group open port 80 for http alb
+
+import for asg
+terraform import module.asg.aws_iam_role.autoscaling_role autoscaling_role
+
+import for alb
+terraform import module.alb.aws_iam_role.alb_logs_role alb-logs-role
+
+to use the existing role
+
+
+add env specifc vpc and subnet and sg information for asg and alb main.tf scripts
+
+
+create target group for elb

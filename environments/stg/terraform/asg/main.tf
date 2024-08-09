@@ -6,13 +6,13 @@ module "asg" {
   instance_ami       = var.instance_ami
   instance_type      = var.instance_type
   key_name           = var.key_name
-  security_group_id  = "sg-0b2dd874252e19b18"
+  security_group_id  = "sg-03aab521e204f1c11"
   instance_profile   = "OM-ec2-instance-role"
   instance_name      = var.instance_name
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
-  subnet_ids         = ["subnet-04b57948eb9e899d1", "subnet-0cb8d2a07ee7fe9ef"]
+  subnet_ids         = ["subnet-063e4801bc1628b85", "subnet-01414de6ac03fe97d"]
   target_group_arns  = var.target_group_arns
   aws_region         = var.aws_region
   tags               = var.tags
