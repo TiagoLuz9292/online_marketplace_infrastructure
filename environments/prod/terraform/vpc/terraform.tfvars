@@ -1,0 +1,15 @@
+vpc_cidr            = "10.2.0.0/16"
+subnet_cidr1        = "10.2.1.0/24"
+subnet_cidr2        = "10.2.2.0/24"
+availability_zone1  = "eu-north-1a"
+availability_zone2  = "eu-north-1b"
+vpc_name            = "prod-vpc"
+subnet_name1        = "prod-public-subnet-1"
+subnet_name2        = "prod-public-subnet-2"
+igw_name            = "prod-igw"
+route_table_name    = "prod-route-table"
+environment_tags = {
+  Environment = "prod"
+}
+aws_region         = "eu-north-1"
+sub_account_id     = "024848457167"
