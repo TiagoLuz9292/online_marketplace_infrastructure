@@ -1,7 +1,7 @@
 
 
 module "vpc" {
-  source = "github.com/TiagoLuz9292/terraform_modules//vpc?ref=main"
+  source = "../../../../terraform_modules/vpc"
 
   vpc_cidr            = var.vpc_cidr
   subnet_cidr1        = var.subnet_cidr1

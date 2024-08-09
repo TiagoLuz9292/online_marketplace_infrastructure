@@ -18,7 +18,10 @@ variable "key_name" {
   type        = string
 }
 
-
+variable "asg_name" {
+  description = "asg name"
+  type        = string
+}
 
 variable "instance_name" {
   description = "The name of the instance"
@@ -49,5 +52,21 @@ variable "target_group_arns" {
 
 variable "aws_region" {
   description = "AWS region"
+  type        = string
+}
+
+variable "tags" {
+  description = "Tags to apply to the resources."
+  type        = map(string)
+}
+
+variable "deployment_strategy" {
+  description = "Determines the deployment strategy: single (one ASG) or blue-green (two ASGs)"
+  type        = string
+  default     = "single"
+}
+
+variable "environment" {
+  description = "The environment to deploy: dev, stg, or prod"
   type        = string
 }

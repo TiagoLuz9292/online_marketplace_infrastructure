@@ -9,6 +9,7 @@ max_size            = 4
 min_size            = 1
 target_group_arns   = []
 aws_region          = "eu-north-1"
+deployment_strategy = "blue-green"
 tags               = {
   Environment = "stg"
   Project     = "online_marketplace"

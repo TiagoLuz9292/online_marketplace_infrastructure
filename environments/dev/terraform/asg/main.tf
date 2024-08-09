@@ -1,6 +1,7 @@
 module "asg" {
-  source = "github.com/TiagoLuz9292/terraform_modules//asg?ref=main"
+  source = "../../../../terraform_modules/asg"
 
+  asg_name               = var.asg_name
   name_prefix        = var.name_prefix
   instance_ami       = var.instance_ami
   instance_type      = var.instance_type
@@ -14,6 +15,9 @@ module "asg" {
   subnet_ids         = ["subnet-03d841f19a574a628", "subnet-0ab7f864b6fea4e4c"]
   target_group_arns  = var.target_group_arns
   aws_region         = var.aws_region
+  deployment_strategy  = var.deployment_strategy
+  tags               = var.tags
+  environment        = var.environment
 
   providers = {
     aws = aws.subaccount

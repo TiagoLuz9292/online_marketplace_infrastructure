@@ -1,5 +1,5 @@
 module "asg" {
-  source = "github.com/TiagoLuz9292/terraform_modules//asg?ref=main"
+  source = "../../../../terraform_modules/asg"
 
   asg_name               = var.asg_name
   name_prefix        = var.name_prefix
@@ -16,6 +16,7 @@ module "asg" {
   target_group_arns  = var.target_group_arns
   aws_region         = var.aws_region
   tags               = var.tags
+  deployment_strategy  = var.deployment_strategy
 
   providers = {
     aws = aws.subaccount
