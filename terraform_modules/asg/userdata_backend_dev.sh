@@ -27,7 +27,7 @@ npm install
 
 
 # Start the backend and frontend applications using PM2
-pm2 start /home/ec2-user/online_marketplace/backend/app.js --name backend --log /var/log/backend.log
+pm2 start /home/ec2-user/online_marketplace_backend/app.js --name backend --log /var/log/backend.log
 
 # Save the PM2 process list and enable PM2 startup on reboot
 pm2 save
