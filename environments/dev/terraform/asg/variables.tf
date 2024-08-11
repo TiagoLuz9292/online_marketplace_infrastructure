@@ -66,7 +66,32 @@ variable "deployment_strategy" {
   default     = "single"
 }
 
+variable "instance_profile" {
+  description = "The environment to deploy: dev, stg, or prod"
+  type        = string
+}
+
+variable "security_group_id" {
+  description = "The environment to deploy: dev, stg, or prod"
+  type        = string
+}
+
+variable "subnet_ids" {
+  description = "The subnet IDs for the ASG"
+  type        = list(string)
+}
+
 variable "environment" {
   description = "The environment to deploy: dev, stg, or prod"
   type        = string
+}
+
+variable "active_asg" {
+  description = "The active ASG (currently serving traffic)"
+  default     = "blue"
+}
+
+variable "passive_asg" {
+  description = "The passive ASG (not serving traffic)"
+  default     = "green"
 }
