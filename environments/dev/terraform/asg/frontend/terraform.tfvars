@@ -1,7 +1,7 @@
 asg_name            = "asg-frontend-dev"
 name_prefix         = "dev"
 instance_ami        = "ami-052387465d846f3fc"
-instance_type       = "t3.micro"
+instance_type       = "t3.small"
 key_name            = "devOps_training"
 instance_name       = "UI-dev"
 desired_capacity    = 1
