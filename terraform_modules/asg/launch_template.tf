@@ -24,7 +24,7 @@ resource "aws_launch_template" "blue_launch_template" {
     }
   }
 
-  user_data = base64encode(file("/home/tluz/project/online_marketplace_infrastructure/terraform_modules/asg/userdata_${var.environment}.sh"))
+  user_data = base64encode(file("/home/tluz/project/online_marketplace_infrastructure/terraform_modules/asg/userdata_${var.app}_${var.environment}.sh"))
 }
 
 resource "aws_launch_template" "green_launch_template" {
@@ -50,5 +50,5 @@ resource "aws_launch_template" "green_launch_template" {
     }
   }
 
-  user_data = base64encode(file("/home/tluz/project/online_marketplace_infrastructure/terraform_modules/asg/userdata_${var.environment}.sh"))
+  user_data = base64encode(file("/home/tluz/project/online_marketplace_infrastructure/terraform_modules/asg/userdata_${var.app}_${var.environment}.sh"))
 }

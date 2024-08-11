@@ -20,6 +20,7 @@ module "asg" {
   environment        = var.environment
   active_asg         = var.active_asg
   passive_asg        = var.passive_asg
+  app                = var.app
 
   providers = {
     aws = aws.subaccount

@@ -12,7 +12,7 @@ export APP_VERSION="0.0.3"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
 cd /home/ec2-user
-https://github.com/TiagoLuz9292/online_marketplace_backend.git
+git clone https://github.com/TiagoLuz9292/online_marketplace_backend.git
 cd online_marketplace_backend
 
 # Install Node.js

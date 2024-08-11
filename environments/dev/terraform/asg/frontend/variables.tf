@@ -95,3 +95,8 @@ variable "passive_asg" {
   description = "The passive ASG (not serving traffic)"
   default     = "green"
 }
+
+variable "app" {
+  description = "app"
+  type        = string
+}
