@@ -4,10 +4,10 @@
 yum update -y
 
 # Install necessary packages
-sudo yum install git -y
+yum install git -y
 
 # Set environment variables
-export NODE_ENV=development
+export NODE_ENV=production
 export APP_VERSION="0.0.3"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
@@ -22,13 +22,20 @@ yum install -y nodejs
 # Install PM2 globally
 npm install pm2@latest -g
 
-# Install application dependencies
+# Install Webpack and Webpack CLI globally
+npm install -g webpack webpack-cli
 
+# Install application dependencies
 npm install
 
-# Start the backend and frontend applications using PM2
+# Build the application using Webpack
+npm run build
 
-pm2 start /home/ec2-user/online_marketplace_frontend/src/App.js --name frontend --log /var/log/frontend.log
+# Install a simple HTTP server to serve the build
+npm install -g serve
+
+# Serve the build using PM2
+pm2 start "serve -s build -l 3000" --name frontend --log /var/log/frontend.log
 
 # Save the PM2 process list and enable PM2 startup on reboot
 pm2 save
