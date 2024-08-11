@@ -1,0 +1,16 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Switch Roles') {
+            steps {
+                sh './switch_roles.sh'
+            }
+        }
+        stage('Deploy New Version') {
+            steps {
+                sh 'terraform apply -auto-approve'
+            }
+        }
+    }
+}

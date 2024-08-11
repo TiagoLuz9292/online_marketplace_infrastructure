@@ -1,5 +1,5 @@
 module "asg" {
-  source = "../../../../terraform_modules/asg"
+  source = "../../../../../terraform_modules/asg"
 
   asg_name               = var.asg_name
   name_prefix        = var.name_prefix

@@ -1,9 +1,9 @@
-asg_name            = "asg-dev"
+asg_name            = "asg-backend-dev"
 name_prefix         = "dev"
 instance_ami        = "ami-052387465d846f3fc"
 instance_type       = "t3.micro"
 key_name            = "devOps_training"
-instance_name       = "UI-dev"
+instance_name       = "API-dev"
 desired_capacity    = 1
 max_size            = 4
 min_size            = 1
