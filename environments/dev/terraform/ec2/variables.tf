@@ -13,11 +13,6 @@ variable "subnet_id" {
   type        = string
 }
 
-variable "security_group_id" {
-  description = "The ID of the security group to assign to the instance"
-  type        = string
-}
-
 variable "key_name" {
   description = "The key name to use for the instance"
   type        = string
@@ -38,8 +33,6 @@ variable "tags" {
   description = "Tags to apply to the instance"
   type        = map(string)
 }
-
-
 
 variable "vpc_id" {
   description = "The VPC ID where the resources are created"

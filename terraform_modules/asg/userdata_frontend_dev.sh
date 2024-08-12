@@ -15,6 +15,8 @@ cd /home/ec2-user
 git clone https://github.com/TiagoLuz9292/online_marketplace_frontend.git
 cd online_marketplace_frontend
 
+git checkout tags/v1.0 -b v1.0-branch
+
 # Install Node.js
 curl -sL https://rpm.nodesource.com/setup_18.x | bash -
 yum install -y nodejs

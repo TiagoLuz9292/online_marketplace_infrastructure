@@ -18,3 +18,8 @@ create target group for elb
 
 
 sudo cat /var/log/cloud-init-output.log
+
+
+export PM2_HOME=/etc/.pm2
+sudo chown ec2-user:ec2-user /etc/.pm2/rpc.sock /etc/.pm2/pub.sock
+pm2 list

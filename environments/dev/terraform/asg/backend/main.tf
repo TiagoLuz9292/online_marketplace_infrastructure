@@ -14,7 +14,7 @@ data "terraform_remote_state" "target_group" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "target_group/terraform.tfstate"
+    key    = "target_group/backend/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }

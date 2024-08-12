@@ -2,7 +2,7 @@ resource "aws_lb_target_group" "asg_target_group" {
 
   provider = aws.subaccount
 
-  name        = "asg-tg-dev"
+  name        = "asg-backend-tg-dev"
   port        = 80
   protocol    = "HTTP"
   vpc_id      = var.vpc_id
