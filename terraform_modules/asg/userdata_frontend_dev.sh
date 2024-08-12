@@ -8,7 +8,7 @@ yum install git -y
 
 # Set environment variables
 export NODE_ENV=production
-export APP_VERSION="0.0.3"  # Example version, change this accordingly
+export APP_VERSION="1.0"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
 cd /home/ec2-user
@@ -35,7 +35,7 @@ npm run build
 npm install -g serve
 
 # Serve the build using PM2
-pm2 start "serve -s build -l 3000" --name frontend --log /var/log/frontend.log
+pm2 start "serve -s build -l 80" --name frontend --log /var/log/frontend.log
 
 # Save the PM2 process list and enable PM2 startup on reboot
 pm2 save

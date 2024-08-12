@@ -8,7 +8,7 @@ sudo yum install git -y
 
 # Set environment variables
 export NODE_ENV=development
-export APP_VERSION="0.0.3"  # Example version, change this accordingly
+export APP_VERSION="1.0"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
 cd /home/ec2-user

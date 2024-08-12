@@ -1,3 +1,14 @@
+data "terraform_remote_state" "alb_sg" {
+  backend = "s3"
+
+  config = {
+    bucket = "online-marketplace-dev"
+    key    = "security_group/alb/terraform.tfstate"
+    region = "eu-north-1"
+    profile = "subaccount"
+  }
+}
+
 resource "aws_security_group" "instance_sg" {
 
   provider = aws.subaccount
@@ -117,6 +128,14 @@ resource "aws_security_group" "instance_sg" {
     cidr_blocks = ["0.0.0.0/0"] # Adjust this as needed
   }
 
+   # HTTP traffic from the ALB security group
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    security_groups = [data.terraform_remote_state.alb_sg.outputs.alb_sg_id]
+  }
+
   egress {
     from_port   = 0
     to_port     = 0
@@ -125,11 +144,17 @@ resource "aws_security_group" "instance_sg" {
   }
 
   tags = {
-    Name = "instance-security-group"
+    Name = "asg-sg-dev"
   }
 }
 
 output "instance_sg_id" {
   description = "The ID of the instance security group"
+  value       = aws_security_group.instance_sg.id
+}
+
+
+output "asg_sg_id" {
+  description = "The ID of the ASG security group"
   value       = aws_security_group.instance_sg.id
 }

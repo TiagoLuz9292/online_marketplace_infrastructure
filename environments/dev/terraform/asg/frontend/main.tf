@@ -1,3 +1,25 @@
+data "terraform_remote_state" "asg_sg" {
+  backend = "s3"
+
+  config = {
+    bucket = "online-marketplace-dev"
+    key    = "security_group/asg/terraform.tfstate"
+    region = "eu-north-1"
+    profile = "subaccount"
+  }
+}
+
+data "terraform_remote_state" "target_group" {
+  backend = "s3"
+
+  config = {
+    bucket = "online-marketplace-dev"
+    key    = "target_group/terraform.tfstate"
+    region = "eu-north-1"
+    profile = "subaccount"
+  }
+}
+
 module "asg" {
   source = "../../../../../terraform_modules/asg"
 
@@ -6,14 +28,14 @@ module "asg" {
   instance_ami       = var.instance_ami
   instance_type      = var.instance_type
   key_name           = var.key_name
-  security_group_id  = var.security_group_id
+  security_group_id  = data.terraform_remote_state.asg_sg.outputs.asg_sg_id
   instance_profile   = var.instance_profile
   instance_name      = var.instance_name
   desired_capacity   = var.desired_capacity
   max_size           = var.max_size
   min_size           = var.min_size
   subnet_ids         = var.subnet_ids
-  target_group_arns  = var.target_group_arns
+  target_group_arns  = [data.terraform_remote_state.target_group.outputs.asg_target_group_arn]
   aws_region         = var.aws_region
   deployment_strategy  = var.deployment_strategy
   tags               = var.tags

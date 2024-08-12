@@ -45,11 +45,6 @@ variable "min_size" {
 
 
 
-variable "target_group_arns" {
-  description = "The target group ARNs for the ASG"
-  type        = list(string)
-}
-
 variable "aws_region" {
   description = "AWS region"
   type        = string
@@ -71,10 +66,6 @@ variable "instance_profile" {
   type        = string
 }
 
-variable "security_group_id" {
-  description = "The environment to deploy: dev, stg, or prod"
-  type        = string
-}
 
 variable "subnet_ids" {
   description = "The subnet IDs for the ASG"
@@ -99,4 +90,9 @@ variable "passive_asg" {
 variable "app" {
   description = "app"
   type        = string
+}
+
+variable "target_group_arns" {
+  description = "The target group ARNs for the ASG"
+  type        = list(string)
 }

@@ -45,3 +45,8 @@ variable "security_group_ids" {
   description = "The security group IDs for the ALB"
   type        = list(string)
 }
+
+variable "target_group_arns" {
+  description = "The target group ARNs for the ASG"
+  type        = string
+}
