@@ -5,7 +5,7 @@ module "vpc" {
 
   vpc_cidr            = var.vpc_cidr
   subnet_cidr_public1       = var.subnet_cidr_public1
-  subnet_cidr_public2       = var.subnet_cidr_public1
+  subnet_cidr_public2       = var.subnet_cidr_public2
   subnet_cidr_private1      = var.subnet_cidr_private1
   subnet_cidr_private2      = var.subnet_cidr_private2
   availability_zone1  = var.availability_zone1
@@ -16,7 +16,8 @@ module "vpc" {
   subnet_private1_name       = var.subnet_private1_name
   subnet_private2_name       = var.subnet_private2_name
   igw_name            = var.igw_name
-  route_table_name    = var.route_table_name
+  public_route_table_name    = var.public_route_table_name
+  private_route_table_name   = var.private_route_table_name
   environment_tags    = var.environment_tags
   aws_region          = var.aws_region
 

@@ -1,7 +1,7 @@
 vpc_cidr            = "10.1.0.0/16"
 availability_zone1  = "eu-north-1a"
 availability_zone2  = "eu-north-1b"
-vpc_name            = "dev-vpc"
+vpc_name            = "vpc"
 
 subnet_cidr_public1       = "10.1.1.0/24"
 subnet_cidr_public2       = "10.1.2.0/24"
@@ -13,8 +13,9 @@ subnet_private1_name      = "private-subnet-1"
 subnet_private2_name      = "private-subnet-2"
 
 
-igw_name            = "dev-igw"
-route_table_name    = "dev-route-table"
+igw_name            = "igw"
+public_route_table_name    = "public-route-table"
+private_route_table_name   = "private-route-table"
 environment_tags = {
   Environment = "dev"
 }

@@ -13,7 +13,7 @@ resource "aws_security_group" "instance_sg" {
 
   provider = aws.subaccount
 
-  vpc_id = "vpc-0f4ba469613cd9663"
+  vpc_id = "vpc-04da49ffdd028f230"
 
   ingress {
     from_port   = 22

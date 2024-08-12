@@ -76,10 +76,16 @@ variable "igw_name" {
   default     = "main-igw"
 }
 
-variable "route_table_name" {
+variable "public_route_table_name" {
   description = "The name of the route table"
   type        = string
-  default     = "main-route-table"
+  default     = "main-public-route-table"
+}
+
+variable "private_route_table_name" {
+  description = "The name of the route table"
+  type        = string
+  default     = "main-private-route-table"
 }
 
 variable "environment_tags" {

@@ -29,11 +29,11 @@ module "alb" {
 
   alb_name               = var.alb_name
   name_prefix        = var.name_prefix
-  subnet_ids         = ["subnet-03d841f19a574a628", "subnet-0ab7f864b6fea4e4c"]
+  subnet_ids         = ["subnet-0bb6c8e7a07fd43d5", "subnet-01988fddcb2d42f19"]
   certificate_arn    = var.certificate_arn
-  vpc_id             = "vpc-0f4ba469613cd9663"
+  vpc_id             = "vpc-04da49ffdd028f230"
   aws_region         = var.aws_region
-  security_group_ids  = [data.terraform_remote_state.alb_sg.outputs.alb_sg_id]
+  security_group_ids  = [data.terraform_remote_state.alb_sg.outputs.alb_backend_sg_id]
   tags               = var.tags
   target_group_arns   = data.terraform_remote_state.target_group.outputs.asg_target_group_arn
 

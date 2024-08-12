@@ -1,4 +1,4 @@
-asg_name            = "asg-backend-dev"
+asg_name            = "asg-backend"
 name_prefix         = "dev"
 instance_ami        = "ami-052387465d846f3fc"
 instance_type       = "t3.small"
@@ -15,7 +15,7 @@ active_asg         = "blue"
 passive_asg        = "green"
 
 instance_profile   = "OM-ec2-instance-role"
-subnet_ids         = ["subnet-03d841f19a574a628", "subnet-0ab7f864b6fea4e4c"]
+subnet_ids         = ["subnet-0bb6c8e7a07fd43d5", "subnet-01988fddcb2d42f19"]
 
 app                = "backend"
 

@@ -2,7 +2,7 @@ name_prefix        = "dev"
 certificate_arn    = ""
 s3_bucket_name     = "online-marketplace-dev"
 aws_region         = "eu-north-1"
-alb_name           = "alb-frontend-dev"
+alb_name           = "alb-frontend"
 
 tags               = {
   Environment = "dev"
