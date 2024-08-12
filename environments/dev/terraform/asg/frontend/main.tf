@@ -3,7 +3,7 @@ data "terraform_remote_state" "asg_sg" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "security_group/asg/terraform.tfstate"
+    key    = "security_group/asg/frontend/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }

@@ -3,7 +3,7 @@ data "terraform_remote_state" "alb_sg" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "security_group/alb/terraform.tfstate"
+    key    = "security_group/alb/frontend/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }
@@ -144,7 +144,7 @@ resource "aws_security_group" "instance_sg" {
   }
 
   tags = {
-    Name = "asg-sg-dev"
+    Name = "asg-frontend-sg"
   }
 }
 

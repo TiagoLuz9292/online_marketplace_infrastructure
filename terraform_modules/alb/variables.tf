@@ -50,3 +50,9 @@ variable "target_group_arns" {
   description = "The target group ARNs for the ASG"
   type        = string
 }
+
+variable "internal" {
+  description = "Whether the ALB is internal or external"
+  type        = bool
+  default     = false
+}

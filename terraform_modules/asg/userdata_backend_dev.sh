@@ -33,7 +33,7 @@ npm install pg sequelize pg-hstore
 # Create the .env file with the correct database configuration
 cat <<EOF > .env
 # Server Configuration
-PORT=3001
+PORT=80
 
 # JWT Secret
 JWT_SECRET=711f37a640b01ff35c8a9650cc723a51daf203a81d9949d286a3919422229c8e0b4cfd71a3d0fe5c31dc049e79777983497351e86f4e3b61f82b211a80f39fe6

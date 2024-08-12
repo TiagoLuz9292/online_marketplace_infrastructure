@@ -3,7 +3,7 @@ data "terraform_remote_state" "asg_sg" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "security_group/asg/terraform.tfstate"
+    key    = "security_group/asg/db/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }
@@ -20,7 +20,7 @@ module "instance" {
   ami                         = var.ami
   instance_type               = var.instance_type
   subnet_id                   = var.subnet_id
-  security_group_id           = data.terraform_remote_state.asg_sg.outputs.asg_sg_id
+  security_group_id           = data.terraform_remote_state.asg_sg.outputs.bd_sg_id
   aws_region                  = var.aws_region
   key_name                    = var.key_name
   associate_public_ip_address = var.associate_public_ip_address

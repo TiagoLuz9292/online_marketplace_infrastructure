@@ -26,7 +26,7 @@ resource "aws_security_group" "alb_sg" {
   }
 
   tags = {
-    Name = "alb-sg-dev"
+    Name = "alb-frontend-sg"
   }
 }
 

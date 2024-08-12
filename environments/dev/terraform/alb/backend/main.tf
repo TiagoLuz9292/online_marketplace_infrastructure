@@ -3,7 +3,7 @@ data "terraform_remote_state" "alb_sg" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "security_group/alb/frontend/terraform.tfstate"
+    key    = "security_group/alb/backend/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }
@@ -14,7 +14,7 @@ data "terraform_remote_state" "target_group" {
 
   config = {
     bucket = "online-marketplace-dev"
-    key    = "target_group/frontend/terraform.tfstate"
+    key    = "target_group/backend/terraform.tfstate"
     region = "eu-north-1"
     profile = "subaccount"
   }
@@ -36,5 +36,6 @@ module "alb" {
   security_group_ids  = [data.terraform_remote_state.alb_sg.outputs.alb_sg_id]
   tags               = var.tags
   target_group_arns   = data.terraform_remote_state.target_group.outputs.asg_target_group_arn
-  internal           = false
+
+  internal           = true
 }

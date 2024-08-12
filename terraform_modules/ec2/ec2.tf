@@ -23,9 +23,7 @@ resource "aws_instance" "instance" {
   tags                        = merge(var.tags, { Name = var.instance_name })
 }
 
-resource "aws_eip" "eip" {
-  instance = aws_instance.instance.id
-}
+
 
 
 
