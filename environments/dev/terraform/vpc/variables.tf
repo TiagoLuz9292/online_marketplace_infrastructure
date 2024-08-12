@@ -4,16 +4,28 @@ variable "vpc_cidr" {
   default     = "10.1.0.0/16"
 }
 
-variable "subnet_cidr1" {
+variable "subnet_cidr_public1" {
   description = "The CIDR block for the first subnet"
   type        = string
-  default     = "10.1.1.0/24"
+  default     = "10.0.1.0/24"
 }
 
-variable "subnet_cidr2" {
+variable "subnet_cidr_public2" {
   description = "The CIDR block for the second subnet"
   type        = string
-  default     = "10.1.2.0/24"
+  default     = "10.0.2.0/24"
+}
+
+variable "subnet_cidr_private1" {
+  description = "The CIDR block for the first subnet"
+  type        = string
+  default     = "10.0.1.0/24"
+}
+
+variable "subnet_cidr_private2" {
+  description = "The CIDR block for the second subnet"
+  type        = string
+  default     = "10.0.2.0/24"
 }
 
 variable "availability_zone1" {
@@ -34,13 +46,25 @@ variable "vpc_name" {
   default     = "main-vpc"
 }
 
-variable "subnet_name1" {
+variable "subnet_public1_name" {
   description = "The name of the first subnet"
   type        = string
   default     = "public-subnet-1"
 }
 
-variable "subnet_name2" {
+variable "subnet_public2_name" {
+  description = "The name of the second subnet"
+  type        = string
+  default     = "public-subnet-2"
+}
+
+variable "subnet_private1_name" {
+  description = "The name of the first subnet"
+  type        = string
+  default     = "public-subnet-1"
+}
+
+variable "subnet_private2_name" {
   description = "The name of the second subnet"
   type        = string
   default     = "public-subnet-2"
