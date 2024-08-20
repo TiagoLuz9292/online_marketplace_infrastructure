@@ -21,6 +21,8 @@ git checkout tags/v1.0 -b v1.0-branch
 curl -sL https://rpm.nodesource.com/setup_18.x | bash -
 yum install -y nodejs
 
+npm install aws-sdk
+
 # Install PM2 globally
 npm install pm2@latest -g
 
@@ -29,6 +31,7 @@ npm install
 
 # Install PostgreSQL client libraries
 npm install pg sequelize pg-hstore
+
 
 # Create the .env file with the correct database configuration
 cat <<EOF > .env

@@ -29,7 +29,7 @@ module "alb" {
 
   alb_name               = var.alb_name
   name_prefix        = var.name_prefix
-  subnet_ids         = ["subnet-0bb6c8e7a07fd43d5", "subnet-01988fddcb2d42f19"]
+  subnet_ids         = ["subnet-0f17056b64582595c", "subnet-0ebe9f180f382632c"]
   certificate_arn    = var.certificate_arn
   vpc_id             = "vpc-04da49ffdd028f230"
   aws_region         = var.aws_region
@@ -37,5 +37,5 @@ module "alb" {
   tags               = var.tags
   target_group_arns   = data.terraform_remote_state.target_group.outputs.asg_target_group_arn
 
-  internal           = true
+  internal           = false
 }

@@ -8,14 +8,14 @@ yum install git -y
 
 # Set environment variables
 export NODE_ENV=production
-export APP_VERSION="1.0"  # Example version, change this accordingly
+export APP_VERSION="1.1"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
 cd /home/ec2-user
 git clone https://github.com/TiagoLuz9292/online_marketplace_frontend.git
 cd online_marketplace_frontend
 
-git checkout tags/v1.0 -b v1.0-branch
+git checkout tags/v1.1 -b v1.1-branch
 
 # Install Node.js
 curl -sL https://rpm.nodesource.com/setup_18.x | bash -
