@@ -37,7 +37,7 @@ npm run build
 npm install -g serve
 
 # Serve the build using PM2
-pm2 start "serve -s build -l 80" --name frontend --log /var/log/frontend.log
+pm2 start "serve -s build -l 3000" --name frontend --log /var/log/frontend.log
 
 # Save the PM2 process list and enable PM2 startup on reboot
 pm2 save

@@ -11,8 +11,8 @@ target_group_arns   = []
 aws_region          = "eu-north-1"
 deployment_strategy = "single"
 
-active_asg         = "blue"
-passive_asg        = "green"
+active_asg         = "green"
+passive_asg        = "blue"
 
 instance_profile   = "OM-ec2-instance-role"
 subnet_ids         = ["subnet-0ebe9f180f382632c", "subnet-0f17056b64582595c"]

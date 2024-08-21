@@ -7,15 +7,15 @@ yum update -y
 yum install git -y
 
 # Set environment variables
-export NODE_ENV=production
-export APP_VERSION="1.1"  # Example version, change this accordingly
+export NODE_ENV=productioncd
+export APP_VERSION="v2"  # Example version, change this accordingly
 
 # Pull the latest code from the repository
 cd /home/ec2-user
 git clone https://github.com/TiagoLuz9292/online_marketplace_frontend.git
 cd online_marketplace_frontend
 
-git checkout tags/v1.1 -b v1.1-branch
+git checkout tags/v2 -b v2-branch
 
 # Install Node.js
 curl -sL https://rpm.nodesource.com/setup_18.x | bash -
@@ -37,7 +37,7 @@ npm run build
 npm install -g serve
 
 # Serve the build using PM2
-pm2 start "serve -s build -l 80" --name frontend --log /var/log/frontend.log
+pm2 start "serve -s build -l 3000" --name frontend --log /var/log/frontend.log
 
 # Save the PM2 process list and enable PM2 startup on reboot
 pm2 save
